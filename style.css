@@ -129,3 +129,57 @@ p {
     font-weight: 400;
     line-height: 1.6;
 }
+
+/* --- RODAPÉ (FOOTER) --- */
+.footer {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 30px 20px 15px 20px;
+    margin-top: 40px;
+    color: #4a5568;
+}
+
+.footer-conteudo {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Garante que no celular os itens fiquem um embaixo do outro */
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(6, 75, 127, 0.1);
+}
+
+.footer-info h3 {
+    color: #064b7f; /* Azul da Ascon */
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.footer-info p {
+    font-size: 0.95rem;
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.footer-contato p {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #2d3748;
+}
+
+.footer-contato strong {
+    color: #064b7f;
+}
+
+.footer-direitos {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #718096;
+}
