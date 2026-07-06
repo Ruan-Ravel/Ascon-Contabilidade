@@ -473,3 +473,139 @@ p {
         padding: 25px;
     }
 }
+
+/* ========================================================
+   OTIMIZAÇÃO COMPLETA PARA CELULARES E DISPOSITIVOS MÓVEIS
+   (Telas menores que 768px)
+======================================================== */
+
+@media (max-width: 768px) {
+
+    /* 1. AJUSTES GERAIS DE TELA E FONTES */
+    body {
+        overflow-x: hidden; /* Impede qualquer rolagem lateral indesejada */
+    }
+
+    /* 2. BARRA DE NAVEGAÇÃO SUPERIOR (NAVBAR) */
+    .navbar {
+        width: 94%;
+        margin-top: 15px;
+        padding: 15px;
+        flex-direction: column; /* Empilha a logo em cima e o menu embaixo */
+        gap: 15px;
+        border-radius: 25px; /* Suaviza as bordas para caber melhor na tela */
+    }
+
+    .logo-img {
+        height: 50px; /* Reduz levemente a logo para economizar espaço vertical */
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center; /* Centraliza os botões */
+        flex-wrap: wrap; /* Se a tela for muito pequena, joga o botão para a linha de baixo com elegância */
+        gap: 18px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .btn-destaque {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* 3. PÁGINA INICIAL (HERO SECTION) */
+    .boas-vindas {
+        padding: 30px 20px;
+        width: 92%;
+        margin: 20px auto;
+    }
+
+    .boas-vindas h1 {
+        font-size: 1.8rem; /* Reduz o título para não ocupar a tela inteira */
+        margin-bottom: 15px;
+    }
+
+    .boas-vindas p {
+        font-size: 1rem;
+    }
+
+    /* 4. PÁGINA SOBRE NÓS */
+    .conteudo-sobre {
+        width: 94%;
+        gap: 25px;
+        margin: 20px auto;
+    }
+
+    .sobre-topo h1 {
+        font-size: 2rem;
+    }
+
+    .sobre-bloco, 
+    .sobre-bloco.reverso {
+        flex-direction: column; /* Força o texto em cima e a foto embaixo em todos os blocos */
+        padding: 25px 20px;
+        gap: 25px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 1.5rem;
+    }
+
+    .sobre-cards-grid {
+        flex-direction: column; /* Empilha os cards de Missão, Visão e Valores */
+    }
+
+    .sobre-card {
+        min-width: 100%;
+        padding: 22px;
+    }
+
+    /* 5. PÁGINA DE CONTATO E FORMULÁRIO */
+    .conteudo-contato {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .contato-container {
+        flex-direction: column; /* Coloca os dados de contato em cima e o formulário embaixo */
+        padding: 25px 20px;
+        gap: 35px;
+    }
+
+    .contato-info h1 {
+        font-size: 2rem;
+    }
+
+    .contato-form-box {
+        padding: 22px 18px;
+    }
+
+    /* PREVENÇÃO DE ZOOM NO IPHONE (iOS) */
+    .campo input, 
+    .campo select, 
+    .campo textarea {
+        font-size: 16px !important; /* A Apple dá zoom automático se a fonte for menor que 16px. Isso evita o bug! */
+        padding: 14px 12px; /* Aumenta a área de toque para o dedo (Touch Target) */
+    }
+
+    .btn-enviar-wpp {
+        padding: 16px; /* Deixa o botão do WhatsApp bem fácil de clicar com o polegar */
+    }
+
+    /* 6. RODAPÉ (FOOTER) */
+    .footer {
+        padding: 30px 15px 15px 15px;
+    }
+
+    .footer-conteudo {
+        flex-direction: column; /* Empilha Endereço, Telefone e E-mail centralizados */
+        gap: 25px;
+    }
+
+    .footer-item {
+        min-width: 100%;
+    }
+}
