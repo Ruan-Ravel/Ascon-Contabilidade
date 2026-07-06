@@ -475,137 +475,98 @@ p {
 }
 
 /* ========================================================
-   OTIMIZAÇÃO COMPLETA PARA CELULARES E DISPOSITIVOS MÓVEIS
-   (Telas menores que 768px)
+   MODO MOBILE FORÇADO E BLINDADO
+   (Ativa por tamanho da tela OU em dispositivos de toque/celulares)
 ======================================================== */
 
-@media (max-width: 768px) {
-
-    /* 1. AJUSTES GERAIS DE TELA E FONTES */
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+    
     body {
-        overflow-x: hidden; /* Impede qualquer rolagem lateral indesejada */
+        overflow-x: hidden;
     }
 
-    /* 2. BARRA DE NAVEGAÇÃO SUPERIOR (NAVBAR) */
+    /* 1. BARRA DE NAVEGAÇÃO VERTICAL */
     .navbar {
-        width: 94%;
-        margin-top: 15px;
+        width: 92%;
+        margin: 15px auto 0 auto;
         padding: 15px;
-        flex-direction: column; /* Empilha a logo em cima e o menu embaixo */
+        flex-direction: column;
         gap: 15px;
-        border-radius: 25px; /* Suaviza as bordas para caber melhor na tela */
+        border-radius: 25px;
     }
 
     .logo-img {
-        height: 50px; /* Reduz levemente a logo para economizar espaço vertical */
+        height: 48px;
     }
 
     .nav-menu {
         width: 100%;
-        justify-content: center; /* Centraliza os botões */
-        flex-wrap: wrap; /* Se a tela for muito pequena, joga o botão para a linha de baixo com elegância */
-        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .nav-link {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .btn-destaque {
-        padding: 8px 20px;
+        padding: 10px 20px;
         font-size: 0.9rem;
     }
 
-    /* 3. PÁGINA INICIAL (HERO SECTION) */
-    .boas-vindas {
-        padding: 30px 20px;
-        width: 92%;
-        margin: 20px auto;
-    }
-
-    .boas-vindas h1 {
-        font-size: 1.8rem; /* Reduz o título para não ocupar a tela inteira */
-        margin-bottom: 15px;
-    }
-
-    .boas-vindas p {
-        font-size: 1rem;
-    }
-
-    /* 4. PÁGINA SOBRE NÓS */
-    .conteudo-sobre {
-        width: 94%;
-        gap: 25px;
-        margin: 20px auto;
-    }
-
-    .sobre-topo h1 {
-        font-size: 2rem;
-    }
-
+    /* 2. EMPILHAMENTO DOS BLOCOS NAS PÁGINAS (1 COLUNA) */
+    .boas-vindas,
     .sobre-bloco, 
-    .sobre-bloco.reverso {
-        flex-direction: column; /* Força o texto em cima e a foto embaixo em todos os blocos */
-        padding: 25px 20px;
+    .sobre-bloco.reverso,
+    .sobre-cards-grid,
+    .contato-container,
+    .footer-conteudo {
+        flex-direction: column;
+        padding: 25px 18px;
+        width: 94%;
+        margin: 20px auto;
         gap: 25px;
     }
 
-    .sobre-texto h2 {
-        font-size: 1.5rem;
-    }
-
-    .sobre-cards-grid {
-        flex-direction: column; /* Empilha os cards de Missão, Visão e Valores */
-    }
-
-    .sobre-card {
+    .sobre-card,
+    .footer-item {
+        width: 100%;
         min-width: 100%;
-        padding: 22px;
     }
 
-    /* 5. PÁGINA DE CONTATO E FORMULÁRIO */
-    .conteudo-contato {
-        width: 94%;
-        margin: 20px auto;
+    /* 3. AJUSTE DE FONTES PARA LEITURA NO CELULAR */
+    h1, .sobre-topo h1, .contato-info h1 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+        text-align: center;
     }
 
-    .contato-container {
-        flex-direction: column; /* Coloca os dados de contato em cima e o formulário embaixo */
-        padding: 25px 20px;
-        gap: 35px;
+    .sobre-texto h2, .contato-form-box h2 {
+        font-size: 1.35rem;
+        text-align: center;
     }
 
-    .contato-info h1 {
-        font-size: 2rem;
+    p {
+        font-size: 1rem;
+        text-align: center;
     }
 
-    .contato-form-box {
-        padding: 22px 18px;
-    }
-
-    /* PREVENÇÃO DE ZOOM NO IPHONE (iOS) */
+    /* 4. PREVENÇÃO DE ZOOM ANTI-BUG DA APPLE (iPhone/iOS) */
     .campo input, 
     .campo select, 
     .campo textarea {
-        font-size: 16px !important; /* A Apple dá zoom automático se a fonte for menor que 16px. Isso evita o bug! */
-        padding: 14px 12px; /* Aumenta a área de toque para o dedo (Touch Target) */
+        font-size: 16px !important;
+        padding: 14px 12px;
     }
 
     .btn-enviar-wpp {
-        padding: 16px; /* Deixa o botão do WhatsApp bem fácil de clicar com o polegar */
+        padding: 16px;
+        font-size: 1rem;
     }
 
-    /* 6. RODAPÉ (FOOTER) */
+    /* 5. RODAPÉ */
     .footer {
         padding: 30px 15px 15px 15px;
-    }
-
-    .footer-conteudo {
-        flex-direction: column; /* Empilha Endereço, Telefone e E-mail centralizados */
-        gap: 25px;
-    }
-
-    .footer-item {
-        min-width: 100%;
     }
 }
