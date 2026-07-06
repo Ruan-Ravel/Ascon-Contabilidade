@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Ascon Contabilidade</title>
+    
+    <!-- Fonte Moderna do Google (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="me.jpg" type="image/x-icon">
+</head>
+<body>
+    
+    <!-- Barra de Navegação Padronizada -->
+    <nav class="navbar">
+        <a href="index.html" class="logo-link">
+            <img src="logo1.png" alt="Logo Ascon Contabilidade" class="logo-img">
+        </a>
+        
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Página Inicial</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+            <!-- Indicador ativo agora em Contato -->
+            <li><a href="contato.html" class="nav-link ativo">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal da Página Contato -->
+    <main class="conteudo-contato">
+        
+        <div class="contato-container">
+            
+            <!-- Lado Esquerdo: Informações Rápidas -->
+            <div class="contato-info">
+                <h1>Fale Conosco</h1>
+                <p>Estamos prontos para ajudar a sua empresa a crescer com segurança fiscal e estratégia contábil. Preencha o formulário ao lado e fale diretamente com nossa equipe pelo WhatsApp!</p>
+                
+                <div class="info-itens">
+                    <div class="item">
+                        <strong>📍 Nosso Escritório</strong>
+                        <p>Itabuna - BA (Atendimento Presencial e Digital)</p>
+                    </div>
+                    <div class="item">
+                        <strong>📞 WhatsApp Direto</strong>
+                        <p>(73) 99110-6068</p>
+                    </div>
+                    <div class="item">
+                        <strong>✉️ E-mail</strong>
+                        <p>contabilidade.ascon@outlook.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Formulário Integrado ao WhatsApp -->
+            <div class="contato-form-box">
+                <h2>Envie uma Mensagem</h2>
+                <form id="formWhatsApp">
+                    
+                    <div class="campo">
+                        <label for="nome">Seu Nome / Nome da Empresa *</label>
+                        <input type="text" id="nome" placeholder="Ex: João da Silva" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="assunto">Como podemos ajudar?</label>
+                        <select id="assunto">
+                            <option value="Abertura de Empresa">Quero abrir uma empresa</option>
+                            <option value="Troca de Contador">Quero trocar de contador</option>
+                            <option value="Consultoria Tributária">Consultoria / Planejamento Tributário</option>
+                            <option value="Dúvidas Gerais">Dúvidas Gerais / Outros assuntos</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensagem">Sua Mensagem *</label>
+                        <textarea id="mensagem" rows="4" placeholder="Escreva aqui os detalhes da sua dúvida ou solicitação..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar-wpp">
+                        <span>📲 Enviar para o WhatsApp</span>
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Rodapé Padrão -->
+    <footer class="footer">
+        <div class="footer-conteudo">
+            <div class="footer-item">
+                <strong>📍 Endereço</strong>
+                <p>Itabuna - BA<br>Atendimento presencial e digital</p>
+            </div>
+            <div class="footer-item">
+                <strong>📞 Telefone / WhatsApp</strong>
+                <p>(73) 99110-6068</p>
+            </div>
+            <div class="footer-item">
+                <strong>✉️ E-mail</strong>
+                <p>contabilidade.ascon@outlook.com</p>
+            </div>
+        </div>
+        <div class="footer-direitos">
+            <p>&copy; 2026 Ascon Contabilidade. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT MÁGICO DO WHATSAPP -->
+    <script>
+        document.getElementById('formWhatsApp').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita a página recarregar
+
+            // Pegando os dados digitados
+            const nome = document.getElementById('nome').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Número do WhatsApp do Escritório (com 55 do Brasil + DDD)
+            const numeroWhatsApp = "5573991106068";
+
+            // Montando o texto da mensagem com formatação e emojis
+            const textoFormatado = `Olá, Ascon Contabilidade! Vim pelo site.\n\n` +
+                                   `*Nome/Empresa:* ${nome}\n` +
+                                   `*Assunto:* ${assunto}\n\n` +
+                                   `*Mensagem:* ${mensagem}`;
+
+            // Codificando o texto para URL e criando o link do WhatsApp
+            const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(textoFormatado)}`;
+
+            // Abrindo o WhatsApp em uma nova aba
+            window.open(urlWhatsApp, '_blank');
+        });
+    </script>
+
+</body>
+</html>
