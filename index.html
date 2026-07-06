@@ -52,6 +52,12 @@
             <p>&copy; 2026 Ascon Contabilidade - CNPJ: 33.086.094/0001-12 . Todos os direitos reservados.</p>
         </div>
     </footer>
-
+<script>
+    // Detecta se é um celular pelo User Agent ou tamanho da tela
+    const ehCelular = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    
+    if (ehCelular) {
+        document.body.classList.add('modo-mobile');
+    }
 </body>
 </html>
